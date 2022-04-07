@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BusinessLogicLibrary.Models.TopProducts>
+
+@{
+    ViewData["Title"] = "Top Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Top Products</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gtin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MerchantProductNo)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gtin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MerchantProductNo)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
